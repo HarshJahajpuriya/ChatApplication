@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/bootstrap-4.5.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/index.css">
+    <title>Chat Application</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+        <a class="navbar-brand" href="/">Chat Application</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-link active" style="margin-right: auto" href="/">Home</a>
+                <div id="logged-in-user-info">
+                    <div class="person-icon"></div>
+                    <span class="badge badge-success">3</span>
+                    <div class="title">Mahaverr Gaur</div>
+                    <button class="btn btn-secondary btn-sm" onclick="logout()">Logout</button>
+                </div>
+                <div id="loginSignupBtns">
+                    <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#loginModal">Login</button>
+                    <button class="btn btn-success btn-sm" data-toggle="modal"
+                        data-target="#signupModal">Signup</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Login</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="loginForm">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="loginInputMobileNumber">Mobile Number</label>
+                            <input type="tel" class="form-control" id="loginInputMobileNumber"
+                                aria-describedby="mobileNumberHelp">
+                            <!-- <small id="mobileNumberHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="loginInputPassword">Password</label>
+                            <input type="password" class="form-control" id="loginInputPassword">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-link btn-sm" style="margin-right: 8px;" data-toggle="modal"
+                            data-target="#signupModal">
+                            New User? <b>Signup</b></button>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- signup modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Signup</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="signupForm">
+                        <div class="form-group">
+                            <label for="signupInputName">Name</label>
+                            <input type="text" class="form-control" id="signupInputName" maxlength="20">
+                        </div>
+                        <div class="form-group">
+                            <label for="signupInputMobileNumber">Mobile Number</label>
+                            <input type="tel" class="form-control" id="signupInputMobileNumber"
+                                aria-describedby="mobileNumberHelp" maxlength="10">
+                            <!-- <small id="mobileNumberHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+                        </div>
+                        <div class="form-group">
+                            <label for="signupInputPassword">Password</label>
+                            <input type="password" class="form-control" id="signupInputPassword" maxlength="8">
+                        </div>
+                        <div class="form-group">
+                            <label for="signupInputCnfPassword">Confirm Password</label>
+                            <input type="password" class="form-control" id="signupInputCnfPassword">
+                        </div>
+                        <div style="text-align: center;">
+                            <button type="submit" class="btn btn-primary">Signup</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="homeSection"></div>
+    <main>
+        <ul id="conversationsList">
+            <!-- <li>
+                <div class="person-icon"></div>
+                <div class="title">
+                    <div>Mahaverr Gaur</div>
+                    <div style="font-size: 11px;">Recent message recieved fr...</div>
+                </div>
+                <div class="time">
+                    <div style="font-size: 12px">11:10 AM</div>
+                    <span class="badge badge-success">2</span>
+                </div>
+            </li>
+            <li>
+                <div class="person-icon"></div>
+                <div class="title">
+                    <div>Mahaverr Gaur</div>
+                    <div style="font-size: 11px;">Recent message recieved fr...</div>
+                </div>
+                <div class="time">
+                    <div style="font-size: 12px">11:10 AM</div>
+                    <span class="badge badge-success">2</span>
+                </div>
+            </li> -->
+            <div style="text-align: center; margin: 12px 0px">
+                <button class="btn btn-primary btn-sm btn-icon" onclick="addNewConversation()">
+                    <span class="material-icons">add</span>
+                </button>
+            </div>
+        </ul>
+        
+        <!-- <div id="chatSection">
+            <div class="messaging-head">
+                <div class="person-icon"></div>
+                <div class="title">Mahaverr Gaur</div>
+                <div class="dropleft">
+                    <button type="button" class="btn btn-light btn-sm btn-icon" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <span class="material-icons">
+                            more_vert
+                        </span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Delete Conversation</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </div>
+            </div>
+            <div class="messaging-area">
+                <div class="msg-left">
+                    <div class="person-icon"></div>
+                    <div class="msg-text">Hello! How are you?</div>
+                </div>
+                <div class="msg-right">
+                    <div class="msg-text">I am fine! What about you?</div>
+                    <div class="person-icon"></div>
+                </div>
+            </div>
+            <div class="messaging-foot">
+                <input class="form-control" type="text" placeholder="Type message here ..">
+                <button type="button" class="btn btn-light btn-sm btn-icon">
+                    <span class="material-icons">send</span>
+                </button>
+            </div>
+        </div> -->
+    </main>
+
+    <script src="/jquery/jquery-3.5.1.js"></script>
+    <script src="/bootstrap-4.5.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="/js/socket.io.js"></script>
+    <script src="/js/utils.js"></script>
+    <script src="/js/entities.js"></script>
+    <script src="/js/service.js"></script>
+    <script src="/index.js"></script>
+</body>
+
+</html>

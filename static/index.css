@@ -1,0 +1,168 @@
+.navbar{
+    box-shadow: 0 0 5px gray;
+    padding: 6px 1rem;
+}
+
+.navbar-nav{
+    width: 100%;
+    align-items: center;
+}
+
+.navbar-nav .person-icon{
+    margin: 0px;
+}
+
+.navbar-nav .badge{
+    visibility: hidden;
+    margin: -4px 0px auto -8px;
+}
+.navbar-nav .title{
+    margin: 6px
+}
+.navbar-nav button{
+    margin: 6px
+}
+
+#logged-in-user-info{
+    display: none;
+    /* display: flex; */
+    align-items: center;
+}
+
+main{
+    display: none;
+    /* display: flex; */
+    height: calc(100vh - 56px);    
+}
+
+#homeSection{
+    /* display: none; */
+    display: flex;
+    height: calc(100vh - 56px);
+    background-image: url('/assets/chat-bg.gif');
+    background-color: #f8f5f4;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+#conversationsList{
+    min-width: 280px;
+    max-width: 280px;
+    border-right: 1px solid darkgray;
+    margin: 0px;
+    padding: 0px;
+    box-shadow: 0 0 2px darkgray;
+    overflow-y: auto;
+}
+
+#conversationsList>li{
+    display: flex;
+    align-items: center;
+    padding: 0 6px;
+    border-bottom: 1px solid rgb(220,220,220);
+}
+
+.person-icon{
+    min-width: 40px;
+    height: 40px;
+    margin: 6px;
+    /* border: 1px solid rgb(192, 192, 192); */
+    border-radius: 20px;
+    box-shadow: 0px 1px 3px #cccccc;
+}
+
+#conversationsList .title{
+    flex: auto;
+    margin: 6px;
+    font-size: 14px;
+    cursor: default;
+}
+
+#conversationsList .time{
+    margin: 6px;
+    text-align: right;
+}
+
+#conversationsList>li:hover{
+    background: whitesmoke;
+}
+
+#chatSection{
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.messaging-head, .messaging-foot{
+    background: whitesmoke;
+    height: 56px;
+    display: flex;
+    padding: 0 6px;
+    align-items: center;
+}
+.messaging-head{
+    box-shadow: 1px 0 3px rgb(156, 156, 156);
+}
+
+.messaging-head .title{
+    cursor: default;
+    margin: 0 6px;
+}
+
+.material-icons{
+    line-height: unset;
+    height: 38px;;
+}
+
+.btn-icon{
+    width: 43px;
+    height: 43px;
+    border-radius: 22px;
+}
+
+.messaging-head>.dropleft{
+    margin: 0 12px 0 auto;
+}
+
+#messagingArea{
+    flex: auto;
+    padding: 6px;
+}
+
+.msg-left, .msg-right{
+    display: flex;
+    align-items: center;
+    padding: 6px 0;
+}
+
+.msg-right{
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+.msg-text{
+    font-size: 14px;
+    border-radius: 15px;
+    padding: 4px 8px;
+}
+
+.msg-left>.msg-text{
+    background: rgb(192, 223, 255);
+    margin-right: 68px
+}
+
+.msg-right>.msg-text{
+    background: whitesmoke;
+    margin-left: 68px;
+}
+
+.messaging-foot{
+    
+}
+
+.messaging-foot>*{
+    margin: 0 6px;
+}
+
